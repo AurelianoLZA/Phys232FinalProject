@@ -21,7 +21,6 @@ while True :
         play_tone.play_tone(tone)
         #sleep(input_object.time)
         #while (time.monotonic()- init_time > input_object.time):
-
-        play_tone.stop tone(tone)
+        play_tone.stop_tone()
 
 

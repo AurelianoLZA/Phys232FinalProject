@@ -53,10 +53,20 @@ def play_a():
   ph.close_hole1()
 
 def play_b():
-
+# blow the wind
+  ph.cole()
 
 def play_a_sharp():
   ph.close_half_hole1()
+
+def stop_tone():
+  #stop blow wind
+  ph.open_hole1()
+  ph.open_hole2()
+  ph.open_hole3()
+  ph.open_hole4()
+  ph.open_hole5()
+  ph.open_hole6()
 
 def play_tone(tone):
   if tone.tone == "C": play_c()
@@ -70,6 +80,3 @@ def play_tone(tone):
   elif tone.tone == "A" : play_a()
   elif tone.tone == "A_sharp" : play_a_sharp()
   elif tone.tone == "B" : play_b()
-
-
-def stop_tone(tone):
