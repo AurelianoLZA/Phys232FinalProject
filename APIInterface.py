@@ -18,17 +18,10 @@ while True :
     if input_object.instrument  == "pennywhistle":
         # Put the command into the queue for later use
         init_time = time.monotonic()
-        while (time.monotonic()- init_time < input_object.time):
-            if input_object.tone == "C": play_c()
-            elif input_object.tone == "C_sharp": play_c_sharp()
-            elif input_object.tone == "D" : play_d()
-            elif input_object.tone == "E" : play_e()
-            elif input_object.tone == "F" : play_f()
-            elif input_object.tone == "F_sharp" : play_f_sharp()
-            elif input_object.tone == "G": play_g()
-            elif input_object.tone == "G_sharp" : play_g_sharp()
-            elif input_object.tone == "A" : play_a()
-            elif input_object.tone == "A_sharp" : play_a_sharp()
-            elif input_object.tone == "B" : play_b()
+        play_tone.play_tone(tone)
+        #sleep(input_object.time)
+        #while (time.monotonic()- init_time > input_object.time):
+
+        play_tone.stop tone(tone)
 
 
