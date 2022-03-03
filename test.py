@@ -1,7 +1,3 @@
-
-
-
-
 class midi232:
     def __init__(self, comm):
         self.time = comm[0]
