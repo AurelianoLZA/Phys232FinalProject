@@ -18,11 +18,9 @@ class midi232:
 input = [midi232(["1","pennywhistle", "play_c"])]
 ## filter out the objects that we are responsible for
 temp = []
-for objs in input :
-    if objs.instrument == "pennywhistle":
-        temp.append(objs)
-
-
+for obj in input :
+    if obj.instrument == "pennywhistle":
+        temp.append(obj)
 
 
 init_time = time.monotonic()
@@ -34,6 +32,4 @@ while not temp:
         play_tone.play(temp[0].tone)
         temp.pop(0)
 
-while True:
-    curr_time = time.monotonic() - init_time
 
