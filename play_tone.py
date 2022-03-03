@@ -1,4 +1,4 @@
-import play_hole as ph
+import bell_ring as ph
 def play_c():
   ph.close_hole1()
   ph.close_hole2()

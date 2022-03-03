@@ -1,11 +1,6 @@
 import time
-import csv
 
-import play_tone
-from play_tone import *
-from queue import Queue
-from adafruit_circuitplayground import cp
-from time import sleep,monotonic
+import play_tone_test
 
 class midi232:
     def __init__(self, comm):
@@ -31,11 +26,12 @@ for obj in input :
 
 init_time = time.monotonic()
 
-while not temp:
+while temp:
 
-    if time.monotonic() - init_time >= temp[0].time:
+    if time.monotonic() - init_time >= float(temp[0].time):
         # play the tone || stop the tone
-        play_tone.play(temp[0].tone)
+        play_tone_test.play(temp[0].tone)
+        #print(temp[0].tone)
         temp.pop(0)
 
 
