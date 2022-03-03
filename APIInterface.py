@@ -1,26 +1,39 @@
 import time
+import csv
+
+import play_tone
 from play_tone import *
 from queue import Queue
 from adafruit_circuitplayground import cp
 from time import sleep,monotonic
 
-class Command:
+class midi232:
     def __init__(self, comm):
         self.time = comm[0]
         self.instrument = comm[1]
         self.tone = comm[2]
 
 
-#q = Queue(maxsize  = 100)
 
-while True :
-    input_object = Command(input() )# assuming that input is a list with 3 arguments,each is a string
-    if input_object.instrument  == "pennywhistle":
-        # Put the command into the queue for later use
-        init_time = time.monotonic()
-        play_tone.play_tone(tone)
-        #sleep(input_object.time)
-        #while (time.monotonic()- init_time > input_object.time):
-        play_tone.stop_tone()
+input = [midi232(["1","pennywhistle", "play_c"])]
+## filter out the objects that we are responsible for
+temp = []
+for objs in input :
+    if objs.instrument == "pennywhistle":
+        temp.append(objs)
 
+
+
+
+init_time = time.monotonic()
+
+while not temp:
+
+    if time.monotonic() - init_time >= temp[0].time:
+        # play the tone || stop the tone
+        play_tone.play(temp[0].tone)
+        temp.pop(0)
+
+while True:
+    curr_time = time.monotonic() - init_time
 
