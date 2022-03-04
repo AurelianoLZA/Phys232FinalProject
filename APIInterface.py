@@ -1,11 +1,6 @@
 import time
-import csv
 
-import play_tone
-from play_tone import *
-from queue import Queue
-from adafruit_circuitplayground import cp
-from time import sleep,monotonic
+import play_tone_test
 
 class midi232:
     def __init__(self, comm):
@@ -15,21 +10,28 @@ class midi232:
 
 
 
-input = [midi232(["1","pennywhistle", "play_c"])]
+input = [midi232(["1","pennywhistle", "C"]),
+         midi232(["2", "pennywhistle", "stop"]),
+         midi232(["10", "abc", "whatever"]),
+         midi232(["11", "pennywhistle","F"]),
+         midi232(["11", "pennywhistle","stop"])]
+
+
 ## filter out the objects that we are responsible for
 temp = []
 for obj in input :
-    if obj.instrument == "pennywhistle":
+    if obj.instrument.strip() == "pennywhistle":
         temp.append(obj)
 
 
 init_time = time.monotonic()
 
-while not temp:
+while temp:
 
-    if time.monotonic() - init_time >= temp[0].time:
+    if time.monotonic() - init_time >= float(temp[0].time):
         # play the tone || stop the tone
-        play_tone.play(temp[0].tone)
+        play_tone_test.play(temp[0].tone)
+        #print(temp[0].tone)
         temp.pop(0)
 
 

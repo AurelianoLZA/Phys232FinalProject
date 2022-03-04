@@ -5,12 +5,18 @@ class midi232:
         self.tone = comm[2]
 
 
-input = [midi232(["1","pennywhistle", "play_c"])]
+input = [midi232(["1","pennywhistle", "C"]),
+         midi232(["2", "pennywhistle", "stop"]),
+         midi232(["10", "abc", "whatever"]),
+         midi232(["11", "pennywhistle","F"]),
+         midi232(["11", "pennywhistle","stop"])]
+
+
 ## filter out the objects that we are responsible for
 temp = []
 for obj in input :
-    if obj.instrument == "pennywhistle":
+    if obj.instrument.strip() == "pennywhistle":
         temp.append(obj)
 
 for item in temp:
-    print(item.tone)
+    print(item.tone.strip())
