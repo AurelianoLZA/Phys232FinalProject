@@ -8,14 +8,21 @@ class midi232:
         self.instrument = comm[1]
         self.tone = comm[2]
 
-
-
 input = [midi232(["1","pennywhistle", "C"]),
-         midi232(["2", "pennywhistle", "stop"]),
-         midi232(["10", "abc", "whatever"]),
-         midi232(["11", "pennywhistle","F"]),
-         midi232(["11", "pennywhistle","stop"])]
-
+         midi232(["2", "pennywhistle", "C_sharp"]),
+         midi232(["3", "pennywhistle", "D"]),
+         midi232(["4", "pennywhistle","D_sharp"]),
+         midi232(["5", "pennywhistle","stop"]),
+         midi232(["5.3", "pennywhistle","E"]),
+         midi232(["6.3", "pennywhistle","F"]),
+         midi232(["7.3", "pennywhistle","F_sharp"]),
+         midi232(["8.3", "pennywhistle","G"]),
+         midi232(["9.3", "pennywhistle","stop"]),
+         midi232(["9.6", "pennywhistle","G_sharp"]),
+         midi232(["10.6", "pennywhistle","A"]),
+         midi232(["11.6", "pennywhistle","A_sharp"]),
+         midi232(["11.6", "pennywhistle","B"]),
+         midi232(["11.6", "pennywhistle","stop"])]
 
 ## filter out the objects that we are responsible for
 temp = []

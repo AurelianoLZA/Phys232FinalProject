@@ -119,6 +119,7 @@ def play(tone):
   if tone == "C": play_c()
   elif tone == "C_sharp": play_c_sharp()
   elif tone == "D" : play_d()
+  elif tone == "D_sharp" : play_d_sharp()
   elif tone == "E" : play_e()
   elif tone == "F" : play_f()
   elif tone == "F_sharp" : play_f_sharp()
