@@ -49,7 +49,7 @@ stuff = [servo0, servo1, servo2, servo3, servo4, servo5, servo6]
 #Calibrate angle positions open/half closed/open: the first index will point to the servo,
 #and the 2nd index the angle such that 0 = open, 1 = half closed, 2 = closed
 #Initialize array with 6 servos all with same value, although it is to be manually calibrated.
-anglez = [[90, 85, 70],[90, 100, 115],[90, 85, 70],[90, 100, 115],[90, 85, 67],[90, 100, 110],[0,45,90]]
+anglez = [[105, 85, 118],[80, 100, 68],[103, 85, 114],[76, 100, 68],[106, 85, 115],[76, 100, 67],[120,45,160]]
 
 def open_hole1():
     stuff[0].angle = anglez[0][0]
@@ -107,3 +107,9 @@ def close_half_hole6():
 
 def close_hole6():
     stuff[5].angle = anglez[5][2]
+
+def blow_wind():
+    stuff[6].angle = 120
+
+def stop_wind():
+    stuff[6].angle = 150
