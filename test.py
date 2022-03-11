@@ -18,5 +18,7 @@ for obj in input :
     if obj.instrument.strip() == "pennywhistle":
         temp.append(obj)
 
-for item in temp:
-    print(item.tone.strip())
+import time
+init_time = time.monotonic()
+
+print(init_time)
